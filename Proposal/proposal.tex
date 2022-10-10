@@ -1,1 +1,46 @@
+\documentclass[12pt]{article}
 
+%% preamble: Keep it clean; only include those you need
+
+\usepackage[margin = 1in]{geometry}
+
+
+
+% highlighting hyper links
+\usepackage[colorlinks=true, citecolor=blue]{hyperref}
+
+
+%% meta data
+
+\title{Proposal}
+\author{Olivia Frillici\\
+  Department of Statistics\\
+  University of Connecticut
+}
+
+\begin{document}
+\maketitle
+The topic of my final research statistical paper will be predicting heart disease. 17.9 million people die of cardiovascular disease globally each year(WHO). By researching and developing tools in which medical providers can input patient data and get outputs pertaining to if a patient has heart disease, medical providers can prescribe lifestyle changes to mitigate and decrease risk of significant cardiac events. 
+The primary goal is to develop a model for predicting whether a person has heart disease or not. A secondary goal is to also explore some of the individual variables to get a better picture of the data. These goals are important because they possibly have real world ramifications, that could if proven accurate and valid change part of the medical landscape. 
+The data is acquired from kaggle and is the “largest heart disease data set available”. The creator of the data set combined a total of 5 datasets which had 11 overlapping variables. There are 918 observations. From the kaggle page which holds the data the variables are as follows: 
+Age: age of the patient [years]
+Sex: sex of the patient [M: Male, F: Female]
+ChestPainType: chest pain type [TA: Typical Angina, ATA: Atypical Angina, NAP: Non-Anginal Pain, ASY: Asymptomatic]
+RestingBP: resting blood pressure [mm Hg]
+Cholesterol: serum cholesterol [mm/dl]
+FastingBS: fasting blood sugar [1: if FastingBS > 120 mg/dl, 0: otherwise]
+RestingECG: resting electrocardiogram results [Normal: Normal, ST: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV), LVH: showing probable or definite left ventricular hypertrophy by Estes' criteria]
+MaxHR: maximum heart rate achieved [Numeric value between 60 and 202]
+ExerciseAngina: exercise-induced angina [Y: Yes, N: No]
+Oldpeak: oldpeak = ST [Numeric value measured in depression]
+ST_Slope: the slope of the peak exercise ST segment [Up: upsloping, Flat: flat, Down: downsloping]
+HeartDisease: output class [1: heart disease, 0: Normal]
+My statistical analysis plan is to use a classical decision tree to create a model which predicts if heart disease is present. I plan to separate the total number of observations into a training and validation set. After creating my initial model I plan to prune the classic tree because it is based on the training set and I want to attempt to mitigate the risks of overfitting the model onto the training set. After I feel that I have created a model to the best of my ability I will use the validation set to see how good my model is. I plan to assess the false positive and false negative rate along with the accuracy. Additionally if time allows I may attempt to find standards for supervised machine learning machines in medicine and compare my results to the standards to see if it could be usable or valid in the actual real world. In addition to creating a machine learning model I also plan to visualize some of the variables in a way which is easy to communicate and digest for the masses. 
+I expect to find a model which can predict heart disease because this is the aim of the classical decision tree which I am creating. I also expect to find through data visualization some interesting sample proportions of certain categorical type variables. I expect this because inherently we are all individuals and so to see what the proportional breakdown i.e. the prevalence of some of the characteristics definitely peaks my curiosity.  Additionally I am curious to see if there are differences in box and whisker plots of more continuous variables that exist on a numerical scale between heart disease and non heart disease individuals. Potential impacts of this data analysis include possibly a functioning machine learning model that may help diagnose heart disease. If the investigation doesn’t work out in the way I am currently predicting or the data analysis predictions which I set above turn out to be wrong I imagine I will gain new knowledge. Sometimes failure can be the best teacher in the long run. Even if it goes wrong - I hope I can identify and learn from the mistakes and missteps I take so that I can grow and change because of this experience.
+In conclusion the aim of this paper is to create a supervised machine learning model, a classical decision tree, to predict whether an individual has heart disease or not. The implications of the creation of an accurate model could have a significant impact not only on the medical community but also the public at large in an effort to increase their present and future health. 
+ 
+ 
+https://www.who.int/health-topics/cardiovascular-diseases#tab=tab_1
+data kaggle citation:
+fedesoriano. (September 2021). Heart Failure Prediction Dataset. Retrieved [Date Retrieved] from https://www.kaggle.com/fedesoriano/heart-failure-prediction.
+\end {document}
