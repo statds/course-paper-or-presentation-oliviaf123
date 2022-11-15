@@ -67,6 +67,10 @@ To assess the model fit each model was validated with the validation set created
 
 \section{Results}
 \label{sec:resu}
+As stated in the methods section, error rate was used to determine model fit and success.
+The first model created, the one with all variables and all observations included produced an  error rate of .496732. This means that 49.67\% of the validation observations were misclassified by the model. After producing this model and investigating the cross validation table it was determined that no pruning was needed. Since the error rate was very large that motivated data modification and reassessment.
+The next model that was made trimmed the number of observations by if an individual had a Cholesterol level of 0. This created a decision tree that needed to be pruned. Both the tree with 3 splits and 1 split met the requirements of falling within 1 standard error of the smallest cross validated error. The model was trimmed to have 3 splits because 1 split felt a little too simplistic. After pruning the tree the error rate was found to be .5201. This means that 52.01\% of the validation data was misclassified. This ended up being the worst performing model.
+The final model created was modified to not include chest pain type because it is a variable that has 4 different classifications and usually variables that are numeric or can have binary classification work much better. Additionally ST slope was also removed because another variable in the data set provides a numeric measurement for this and the ST Slope variable, similar to the chest paint type variable, has 3 different classifications instead of 2. This tree also showed qualities which would make it a good candidate for pruning however, after attempting pruning in a bevvy of ways my program would seemingly not do any pruning. The error rate for this tree ended up being .4924. This means 49.24\% of the data in the validation set was misclassified. This model was surprisingly the one with the lowest error rate.
 
 \section{Discussion}
 \label{sec:disc}
