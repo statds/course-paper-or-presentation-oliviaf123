@@ -57,8 +57,12 @@ PLEASE NOTE: STILL TRYING TO FIGURE OUT HOW TO OUTPUT THE GRAPHS IN ONE VISUAL S
 \section{Methods}
 \label{sec:meth}
 
-Use this section to present the methodologies that will generate results by
-analyzing the data.
+
+The aim for this paper is to create a classical decision tree machine learning model that given variable inputs can predict whether an individual has heart disease or not.
+Three classical decision trees were created. One included all of the variables, one included all variables however the data had been modified to void any individuals that had a cholesterol level of 0 mg/dL. The final model created had been modified to include all variables except for chest pain type and ST slope.
+Before any classical decision tree was made the data was split into 2 equal sized sets. One served as the training set and the other served as the validation or test set. A seed number of 4321 was used for the sample function in r so that results could be reproducible.
+After the classical decision tree was made a determination if the tree needed to be trimmed by finding the smallest tree that had a cross validated error within one standard error of the minimum cross validated error.
+To assess the model fit each model was validated with the validation set created at the beginning and the error rate was calculated by the sum of false negative and false positives over the total number of individuals in the set.
 
 
 \section{Results}
