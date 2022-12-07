@@ -49,8 +49,71 @@
 \section{Data}
 \label{sec:data}
 
-The data is acquired from kaggle and is the “largest heart disease data set available”. The creator of the data set combined a total of 5 datasets which had 11 overlapping variables. There are 918 observations. The variables in the data set are as follows: Age,measured in years, sex, male or female, ChestPainType, TA for typical angina, ATA for atypical angina, NAP for non-anginal pain, and ASY for asymptomatic, RestingBP, resting blood pressure measured in mm Hg, Cholesterol, serum cholesterol measured in mg/dL, FastingBS, fasting blood sugar, a binary variable where 1 equals FastingBS greater than 120 mg/dl and 0 otherwise, RestingECG, a binary variable for resting electrocardiogram results where Normal is Normal and ST represents having an ST wave abnormality, MaxHR, maximum heart rate achieved, Exercise angina, a binary yes or no variable, Oldpeak, a numeric value of ST wave depression, ST\_Slope, a categorical variable that places the slope of the peak exercise ST segment of a heartbeat wave into Up for upsloping, flat for flat, and down for downsloping, and lastly HeartDisease, the variable of interest, a binary variable where 1 represents an individual with heart disease and 0 for an individual that does not have heart disease. As expected with any dataset some data cleaning and variable visualization was required for developing and fitting the model.
-From some rudimentary data visualization it was found that within this data set more females did not have heart disease than females who did. The opposite is evidently true for males, more males had heart disease in the data set than males who did not have heart disease. In the Age and Heart Disease comparative boxplot it is shown that the median age for individuals who had heart disease is greater than the individuals who did not. In the Cholesterol and Heart Disease comparative boxplots the medians for individuals who did and did not have heart disease seem to be very similar. Within the cholesterol data column there are over 100 observations with a value of 0, so when constructing the comparative boxplot the 0 values were removed so as not to extraordinarily skew the results.  The resting blood pressure and heart disease comparative boxplots keep the same theme. The median resting blood pressure for individuals with heart disease is slightly higher than for those without heart disease. The fasting blood sugar and heart disease proportional bar chart shows that a very high proportion of the individuals that do not have heart disease also have a fasting blood sugar value of less than 120 mg/dl. The bar chart also shows that a large proportion of individuals who have heart disease also have a fasting blood sugar of less than 120 mg/dl. Finally this barchart shows that while individuals who have a fasting blood sugar that is greater than 120 mg/dl are in the minority there is a higher proportion of them who have heart disease than not. A similar trend seems to follow for resting ECG and heart disease. The resting ECG and Heart disease proportional bar chart shows that a majority of individuals both with and without heart disease have normal resting ECG outputs. However, the proportion of individuals who have heart disease and an ST wave abnormality is larger than the proportion of individuals who do not have heart disease and still have an ST wave abnormality. The max heart rate and heart disease comparative boxplot chart shows that the median max heart rate of individuals without heart disease is higher than that for individuals with heart disease. The exercise angina and heart disease comparative proportional bar chart shows that a high proportion of individuals who do not have heart disease also do not have exercise induced angina. Additionally, a high proportion of individuals who do have heart disease also have exercise induced angina. Finally the comparative proportional barchart of ST Slope and heart disease shows that a high proportion of individuals who do not have heart disease have an upward slope on the ST segment of their peak exercise heart beat wave. Conversely a high proportion of individuals who have heart disease have a flat slope on the ST segment of their peak exercise heart beat wave. Additionally while in both the group with and without heart disease a downward sloping ST segment of the peak exercise heart beat wave was a very small minority of individuals and there was a higher proportion in individuals who had heart disease compared to those that did not.
+The data is acquired from kaggle and is the “largest heart disease data set available”. The creator of the data set combined a total of 5 datasets which had 11 overlapping variables. There are 918 observations. The variables in the data set are as follows: Age,measured in years, sex, male or female, ChestPainType, TA for typical angina, ATA for atypical angina, NAP for non-anginal pain, and ASY for asymptomatic, RestingBP, resting blood pressure measured in mm Hg, Cholesterol, serum cholesterol measured in mg/dL, FastingBS, fasting blood sugar, a binary variable where 1 equals FastingBS greater than 120 mg/dl and 0 otherwise, RestingECG, a binary variable for resting electrocardiogram results where Normal is Normal and ST represents having an ST wave abnormality, MaxHR, maximum heart rate achieved, Exercise angina, a binary yes or no variable, Oldpeak, a numeric value of ST wave depression, ST\_Slope, a categorical variable that places the slope of the peak exercise ST segment of a heartbeat wave into Up for upsloping, flat for flat, and down for downsloping, and lastly HeartDisease, the variable of interest, a binary variable where 1 represents an individual with heart disease and 0 for an individual that does not have heart disease. As expected with any dataset some data cleaning and variable visualization was required for developing and fitting the model. \par
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=\textwidth]{heartdisease_and_gender.png}
+  \caption{A comparative bar chart showing the distribution of gender and heart disease.}
+  \label{fig:heartdisease_and_gender}
+\end{figure}
+Figure~\ref{fig:heartdisease_and_gender} shows that within this data set more females did not have heart disease than females who did. The opposite is evidently true for males, more males had heart disease in the data set than males who did not have heart disease. 
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=\textwidth]{age_heartdisease.png}
+  \caption{A comparative boxplot showing median age of individuals in the data set with and without heart disease.}
+  \label{fig:age_heartdisease}
+\end{figure}
+In figure~\ref{fig:age_heartdisease} the Age and Heart Disease comparative boxplot shows that the median age for individuals who had heart disease is greater than the individuals who did not. 
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=\textwidth]{cholesterol_heartdisease.png}
+  \caption{A comparative boxplot showing median age of individuals in the data set with and without heart disease.}
+  \label{fig:cholesterol_heartdisease}
+\end{figure}
+%CHANGE THE IMAGE PUT IN THE WRONG ONE
+In figure~\ref{fig:cholesterol_heartdisease} the Cholesterol and Heart Disease comparative boxplots the medians for individuals who did and did not have heart disease seem to be very similar. Within the cholesterol data column there are over 100 observations with a value of 0, so when constructing the comparative boxplot the 0 values were removed so as not to extraordinarily skew the results.  
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=\textwidth]{RestingBloodPressure_Heartdisease.png}
+  \caption{A comparative boxplot showing resting blood pressure in mmHg of individuals in the data set with and without heart disease.}
+  \label{fig:rbp_heartdisease}
+\end{figure}
+In figure~\ref{rbp_heartdisease} the resting blood pressure and heart disease comparative boxplots keep the same theme as figure~\ref{fig:cholesterol_heartdisease}. The median resting blood pressure for individuals with heart disease is slightly higher than for those without heart disease. However the difference is so mild it appears insignificant. 
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=\textwidth]{FastingBloodSugar_HeartDisease.png}
+  \caption{A proportional bar chart that shows frequency of individuals who have a fasting blood sugar value of greater than 120 mg/dl or less than within the groups of individuals who have heart disease and who don't.}
+  \label{fig:FBS_heartdisease}
+\end{figure}
+Figure~\ref{fig:FBS_heartdisease} the fasting blood sugar and heart disease proportional bar chart shows that a very high proportion of the individuals that do not have heart disease also have a fasting blood sugar value of less than 120 mg/dl. The bar chart also shows that a large proportion of individuals who have heart disease also have a fasting blood sugar of less than 120 mg/dl. Finally this barchart shows that while individuals who have a fasting blood sugar that is greater than 120 mg/dl are in the minority there is a higher proportion of them who have heart disease than not. 
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=\textwidth]{RestingECG_HeartDisease.png}
+  \caption{A porportional bar chart that shows the frequency of individuals who have a resting electrocardiogram test result of normal or an elctrocardiogram result depicting an ST wave abnormality within the groups of individuals who have or do not have heart disease.}
+  \label{fig:ECG_heartdisease}
+\end{figure}
+Figure~\ref{fig:ECG_heartdisease} shows that a majority of individuals both with and without heart disease have normal resting ECG outputs. This graph shows a similar trend to figure~\ref{fig:FBS_heartdisease} in that while having an ST wave abnormality is clearly in the minority a larger proportion of individuals affected by the abnormality also have heart disease.
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=\textwidth]{MaxHR_HeartDisease.png}
+  \caption{A comparative boxplot showing maximum heart rate achieved in beats per minute for individuals in the data set with and without heart disease.}
+  \label{fig:maxHR_heartdisease}
+\end{figure}
+Figure~\ref{fig:maxHR_heartdisease}shows that the median max heart rate of individuals without heart disease is higher than that for individuals with heart disease. 
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=\textwidth]{ExerciseInducedAngina_HeartDisease.png}
+  \caption{A proportional bar chart that shows the frequency of individuals who have exercise induced angina within the groups of individuals who have or don't have heart disease.}
+  \label{fig:EIA_heartdisease}
+\end{figure}
+Figure\ref{fig:EIA_heartdisease}shows that a high proportion of individuals who do not have heart disease also do not have exercise induced angina. Additionally, a high proportion of individuals who do have heart disease also have exercise induced angina. 
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=\textwidth]{STSlope_HeartDisease.png}
+  \caption{A proportional barchart that shows the frequency of individuals who have an upward sloping, downward sloping, or flat ST segment of their peak exercise heart beat wave within the groups of individuals who have or don't have deart disease.}
+  \label{fig:STslope_heartdisease}
+\end{figure}
+Finally figure~\ref{fig:STslope_heartdisease} shows that a high proportion of individuals who do not have heart disease have an upward slope on the ST segment of their peak exercise heart beat wave. Conversely a high proportion of individuals who have heart disease have a flat slope on the ST segment of their peak exercise heart beat wave. Additionally while in both the group with and without heart disease a downward sloping ST segment of the peak exercise heart beat wave was a very small minority of individuals, there was a higher proportion in individuals who had heart disease compared to those that did not.
 PLEASE NOTE: STILL TRYING TO FIGURE OUT HOW TO OUTPUT THE GRAPHS IN ONE VISUAL SO THEY DONt TAKE UP PAGES AND PAGES OF SPACE. 
 
 
