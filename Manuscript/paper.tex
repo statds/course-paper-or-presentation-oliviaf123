@@ -52,29 +52,28 @@ In this paper a multitude of classical decision trees were grown with the larges
 The data is acquired from kaggle and is the “largest heart disease data set available”. The creator of the data set combined a total of 5 datasets which had 11 overlapping variables. There are 918 observations. The variables in the data set are as follows: Age,measured in years, sex, male or female, ChestPainType, TA for typical angina, ATA for atypical angina, NAP for non-anginal pain, and ASY for asymptomatic, RestingBP, resting blood pressure measured in mm Hg, Cholesterol, serum cholesterol measured in mg/dL, FastingBS, fasting blood sugar, a binary variable where 1 equals FastingBS greater than 120 mg/dl and 0 otherwise, RestingECG, a binary variable for resting electrocardiogram results where Normal is Normal and ST represents having an ST wave abnormality, MaxHR, maximum heart rate achieved, Exercise angina, a binary yes or no variable, Oldpeak, a numeric value of ST wave depression, ST\_Slope, a categorical variable that places the slope of the peak exercise ST segment of a heartbeat wave into Up for upsloping, flat for flat, and down for downsloping, and lastly HeartDisease, the variable of interest, a binary variable where 1 represents an individual with heart disease and 0 for an individual that does not have heart disease. As expected with any dataset some data cleaning and variable visualization was required for developing and fitting the model. \par
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=\textwidth]{heartdisease_and_gender.png}
+  \includegraphics[width=\textwidth]{Sex_HeartDisease.png}
   \caption{A comparative bar chart showing the distribution of gender and heart disease.}
-  \label{fig:heartdisease_and_gender}
+  \label{fig:heartdisease_and_sex}
 \end{figure}
-Figure~\ref{fig:heartdisease_and_gender} shows that within this data set more females did not have heart disease than females who did. The opposite is evidently true for males, more males had heart disease in the data set than males who did not have heart disease. 
+Figure~\ref{fig:heartdisease_and_sex} shows that within this data set more females did not have heart disease than females who did. The opposite is evidently true for males, more males had heart disease in the data set than males who did not have heart disease. 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=\textwidth]{age_heartdisease.png}
+  \includegraphics[width=\textwidth]{Age_HeartDisease.png}
   \caption{A comparative boxplot showing median age of individuals in the data set with and without heart disease.}
   \label{fig:age_heartdisease}
 \end{figure}
 In figure~\ref{fig:age_heartdisease} the Age and Heart Disease comparative boxplot shows that the median age for individuals who had heart disease is greater than the individuals who did not. 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=\textwidth]{cholesterol_heartdisease.png}
-  \caption{A comparative boxplot showing median age of individuals in the data set with and without heart disease.}
+  \includegraphics[width=\textwidth]{Cholesterol_Heart Disease.png}
+  \caption{A comparative boxplot showing serum cholesterol level mg/dL for individuals in the data set with and without heart disease.}
   \label{fig:cholesterol_heartdisease}
 \end{figure}
-%CHANGE THE IMAGE PUT IN THE WRONG ONE
 In figure~\ref{fig:cholesterol_heartdisease} the Cholesterol and Heart Disease comparative boxplots the medians for individuals who did and did not have heart disease seem to be very similar. Within the cholesterol data column there are over 100 observations with a value of 0, so when constructing the comparative boxplot the 0 values were removed so as not to extraordinarily skew the results.  
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=\textwidth]{RestingBloodPressure_Heartdisease.png}
+  \includegraphics[width=\textwidth]{RBP_HeartDisease.png}
   \caption{A comparative boxplot showing resting blood pressure in mmHg of individuals in the data set with and without heart disease.}
   \label{fig:rbp_heartdisease}
 \end{figure}
@@ -144,7 +143,7 @@ Limitations in this paper mainly stem from the data source itself. Since there a
 Finally and most importantly, this study as it stands in its current state proves something very important: computers won\textsc{\char13}t be overtaking a doctor\textsc{\char13}s role anytime soon. The grueling years of training and studying still prevails over a tiny microchip in a motherboard. The results of this study however should not discourage the motivation of trying to come up with statistical models for medical outcomes. This paper should merely mark a moment in time. In the future as statistical knowledge increases and more patient data is released someday a computer may help a doctor in diagnosis.
 
 
-%\bibliography{refs}
-%\bibliographystyle{ama}
+\bibliography{refs}
+\bibliographystyle{ama}
 
 \end{document}
